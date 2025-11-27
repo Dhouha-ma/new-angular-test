@@ -1,0 +1,20 @@
+.user-form {
+  display: flex;
+  width: 350px;
+  background-color: red;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+
+.user-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.submit-button{
+  margin-top: 30px;
+}

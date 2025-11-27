@@ -1,0 +1,27 @@
+<form #userForm class="user-form">
+  <div class="user-input">
+    <label>First name</label>
+    <app-form-input></app-form-input>
+  </div>
+
+  <div class="user-input">
+    <label>Last name</label>
+    <app-form-input></app-form-input>
+  </div>
+
+  <div class="user-input">
+    <label>Email:</label>
+    <app-form-input></app-form-input>
+  </div>
+  
+  <div class="user-input">
+    <label>Phone</label>
+    <app-form-input></app-form-input>
+  </div>
+
+  <div class="submit-button">
+    <app-button label="Submit" (clicked)="onButtonClick()"></app-button>
+  </div>
+</form>
+
+<p>Form value:</p>

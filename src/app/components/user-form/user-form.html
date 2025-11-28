@@ -1,27 +1,31 @@
-<form #userForm class="user-form">
+<form [formGroup]="userForm" class="user-form">
   <div class="user-input">
     <label>First name</label>
-    <app-form-input></app-form-input>
+    <app-form-input formControlName="firstName"></app-form-input>
   </div>
 
   <div class="user-input">
     <label>Last name</label>
-    <app-form-input></app-form-input>
+    <app-form-input formControlName="lastName"></app-form-input>
   </div>
 
   <div class="user-input">
-    <label>Email:</label>
-    <app-form-input></app-form-input>
+    <label>Email</label>
+    <app-form-input formControlName="email"></app-form-input>
   </div>
-  
+
   <div class="user-input">
     <label>Phone</label>
-    <app-form-input></app-form-input>
+    <app-form-input formControlName="phone"></app-form-input>
   </div>
 
   <div class="submit-button">
-    <app-button label="Submit" (clicked)="onButtonClick()"></app-button>
+    <app-button
+      label="Submit"
+      (clicked)="onButtonClick()"
+      [disabled]="!userForm.valid"
+    ></app-button>
   </div>
-</form>
 
-<p>Form value:</p>
+  <p>Form valid: {{ userForm.valid }}</p>
+</form>

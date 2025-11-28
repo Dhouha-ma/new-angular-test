@@ -1,12 +1,13 @@
 .user-form {
   display: flex;
   width: 350px;
-  background-color: red;
   flex-wrap: wrap;
   justify-content: flex-start;
   flex-direction: column;
   gap: 10px;
-  padding: 10px;
+  padding: 20px;
+  border: 1px solid #777;
+  border-radius: 6px;
 }
 
 .user-input {
@@ -15,6 +16,6 @@
   align-items: center;
 }
 
-.submit-button{
+.submit-button {
   margin-top: 30px;
 }

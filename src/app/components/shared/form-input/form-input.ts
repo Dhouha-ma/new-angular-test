@@ -23,18 +23,18 @@ export class FormInput implements ControlValueAccessor {
   value = '';
   disabled = false;
 
-  onChange = (value: any) => {};
+  onChange = (value: string) => {};
   onTouched = () => {};
 
-  writeValue(value: any) {
+  writeValue(value: string) {
     this.value = value ?? '';
   }
 
-  registerOnChange(fn: any) {
-    this.onChange = fn;
+  registerOnChange(onChangeFunction: any) {
+    this.onChange = onChangeFunction;
   }
 
-  registerOnTouched(fn: any) {
-    this.onTouched = fn;
+  registerOnTouched(onTouchedFunction: any) {
+    this.onTouched = onTouchedFunction;
   }
 }

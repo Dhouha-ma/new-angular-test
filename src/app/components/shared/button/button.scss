@@ -1,5 +1,13 @@
 .button {
-    padding: 10px;
-    color: grey;
-    width: 100px;
+  padding: 10px;
+  width: 100px;
+  cursor: pointer;
+  color: grey; 
+  border-radius: 5px;   
+  border: 1px solid lightgrey;   
+
+  &:disabled {
+    cursor: default;  
+    color: lightgrey; 
+  }
 }

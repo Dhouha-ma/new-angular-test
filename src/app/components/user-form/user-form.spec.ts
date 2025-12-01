@@ -20,4 +20,14 @@ describe('UserForm', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+   describe('onButtonClick: submit button behavior', () => {
+    it('should log a message when clicked', () => {
+      const logSpy = spyOn(console, 'log');
+
+      component.onButtonClick();
+
+      expect(logSpy).toHaveBeenCalledWith('Button clicked!');
+    });
+  });
 });

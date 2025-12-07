@@ -20,4 +20,22 @@ describe('FormInput', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  describe('writeValue', () => {
+    it('should set the correct value if the provided value is defined', () => {
+      const value = "test";
+
+      component.writeValue(value);
+
+      expect(component.value).toBe("test")
+    });
+
+    it('should set the value to empty string if the value is undefined', () => {
+      const value = undefined;
+
+      component.writeValue(value!);
+
+      expect(component.value).toBe("")
+    });
+  });
 });

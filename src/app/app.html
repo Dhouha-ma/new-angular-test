@@ -1,2 +1,7 @@
-<app-home></app-home>
+<ul class="navigation">
+  <li class="list" (click)="goTo('home')">Home</li>
+  <li class="list" (click)="goTo('about')">About</li>
+  <li class="list" (click)="goTo('contact')">Contact</li>
+</ul>
+
 <router-outlet />

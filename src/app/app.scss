@@ -1,0 +1,13 @@
+.navigation {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+
+  .list {
+    list-style-type: none;
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  }
+}

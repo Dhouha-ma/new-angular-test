@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 
 import { Home } from './components/home/home';
 
@@ -11,4 +11,10 @@ import { Home } from './components/home/home';
 })
 export class App {
   protected readonly title = signal('new-angular-test');
+
+  constructor(private router: Router) {}
+
+  public goTo(path: string) {
+    this.router.navigateByUrl(path);
+  }
 }

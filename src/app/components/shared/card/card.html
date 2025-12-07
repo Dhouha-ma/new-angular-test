@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="card-header">
+    <h3>{{ title }}</h3>
+
+    <button class="expand-button" (click)="toggle()">
+      {{ buttonText() }}
+    </button>
+  </div>
+
+  @if (isExpanded) {
+    <div class="card-body">
+      <ng-content></ng-content>
+    </div>
+  }
+</div>

@@ -6,3 +6,8 @@ export type UserFormControls = {
   email: FormControl<string | null>;
   phone: FormControl<string | null>;
 };
+
+export enum ButtonText {
+  Expend = 'Expend',
+  Collapse = 'Collapse',
+}

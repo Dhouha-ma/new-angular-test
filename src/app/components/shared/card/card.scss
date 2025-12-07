@@ -1,0 +1,22 @@
+.card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  width: 250px;
+  border-radius: 8px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.expand-button {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.card-body {
+  margin-top: 1rem;
+  color: #444;
+}

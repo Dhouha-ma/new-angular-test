@@ -7,6 +7,4 @@ import { UserForm } from '../user-form/user-form';
   templateUrl: './contact.html',
   styleUrl: './contact.scss',
 })
-export class Contact {
-
-}
+export class Contact {}

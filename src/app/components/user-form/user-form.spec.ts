@@ -8,9 +8,8 @@ describe('UserForm', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [UserForm]
-    })
-    .compileComponents();
+      imports: [UserForm],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(UserForm);
     component = fixture.componentInstance;
@@ -21,7 +20,7 @@ describe('UserForm', () => {
     expect(component).toBeTruthy();
   });
 
-   describe('onButtonClick: submit button behavior', () => {
+  describe('onButtonClick: submit button behavior', () => {
     it('should log a message when clicked', () => {
       const logSpy = spyOn(console, 'log');
 

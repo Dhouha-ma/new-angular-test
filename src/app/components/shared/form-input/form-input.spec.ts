@@ -8,9 +8,8 @@ describe('FormInput', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FormInput]
-    })
-    .compileComponents();
+      imports: [FormInput],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(FormInput);
     component = fixture.componentInstance;
@@ -23,11 +22,11 @@ describe('FormInput', () => {
 
   describe('writeValue', () => {
     it('should set the correct value if the provided value is defined', () => {
-      const value = "test";
+      const value = 'test';
 
       component.writeValue(value);
 
-      expect(component.value).toBe("test")
+      expect(component.value).toBe('test');
     });
 
     it('should set the value to empty string if the value is undefined', () => {
@@ -35,7 +34,7 @@ describe('FormInput', () => {
 
       component.writeValue(value!);
 
-      expect(component.value).toBe("")
+      expect(component.value).toBe('');
     });
   });
 });

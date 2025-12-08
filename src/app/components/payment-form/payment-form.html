@@ -1,0 +1,23 @@
+<form class="payment-form">
+  <div class="input-container">
+    <label>Name</label>
+    <app-form-input [placeholder]="'Name'"></app-form-input>
+  </div>
+
+  <div class="input-container">
+    <label>Card Number</label>
+    <app-form-input [placeholder]="'Card Number'"></app-form-input>
+  </div>
+
+  <div class="input-container">
+    <label>Expiry Date</label>
+    <app-form-input [placeholder]="'Expiry Date'"></app-form-input>
+  </div>
+
+  <div class="input-container">
+    <label>CVV</label>
+    <app-form-input [placeholder]="'CVV'"></app-form-input>
+  </div>
+
+  <app-button [label]="'Pay Now'" class="pay-now-btn"></app-button>
+</form>

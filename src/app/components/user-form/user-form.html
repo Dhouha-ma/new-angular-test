@@ -19,13 +19,12 @@
     <app-form-input formControlName="phone"></app-form-input>
   </div>
 
-  <div class="submit-button">
-    <app-button
-      label="Submit"
-      (clicked)="onButtonClick()"
-      [disabled]="!userForm.valid"
-    ></app-button>
-  </div>
+  <app-button
+    label="Submit"
+    (clicked)="onButtonClick()"
+    [disabled]="!userForm.valid"
+    class="submit-button"
+  ></app-button>
 
   <p>Form valid: {{ userForm.valid }}</p>
 </form>

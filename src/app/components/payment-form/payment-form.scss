@@ -1,0 +1,23 @@
+.payment-form {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: space-around;
+  gap: 20px;
+  padding: 20px 0;
+  border: 1px solid grey;
+  border-radius: 8px;
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.pay-now-btn {
+  display: flex;
+  justify-content: flex-end;
+}

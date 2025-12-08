@@ -1,4 +1,4 @@
-import { Component, forwardRef } from '@angular/core';
+import { Component, forwardRef, Input } from '@angular/core';
 import {
   NG_VALUE_ACCESSOR,
   ControlValueAccessor,
@@ -22,6 +22,7 @@ import {
 export class FormInput implements ControlValueAccessor {
   value = '';
   disabled = false;
+  @Input() placeholder = '';
 
   onChange = (value: string) => {};
   onTouched = () => {};

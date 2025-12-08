@@ -1,23 +1,24 @@
-<form class="payment-form">
+<form [formGroup]="paymentForm" class="payment-form">
   <div class="input-container">
     <label>Name</label>
-    <app-form-input [placeholder]="'Name'"></app-form-input>
+    <app-form-input formControlName="name" placeholder="Name"></app-form-input>
   </div>
 
   <div class="input-container">
     <label>Card Number</label>
-    <app-form-input [placeholder]="'Card Number'"></app-form-input>
+    <app-form-input formControlName="cardNumber" placeholder="Card Number"></app-form-input>
   </div>
 
   <div class="input-container">
     <label>Expiry Date</label>
-    <app-form-input [placeholder]="'Expiry Date'"></app-form-input>
+    <app-form-input formControlName="expiryDate" placeholder="Expiry Date"></app-form-input>
   </div>
 
   <div class="input-container">
     <label>CVV</label>
-    <app-form-input [placeholder]="'CVV'"></app-form-input>
+    <app-form-input formControlName="cvv" placeholder="CVV"></app-form-input>
   </div>
 
-  <app-button [label]="'Pay Now'" class="pay-now-btn"></app-button>
+  <app-button label="Pay Now" class="pay-now-btn" [disabled]="!paymentForm.valid"></app-button>
+  <p>Form valid: {{ paymentForm.valid }}</p>
 </form>

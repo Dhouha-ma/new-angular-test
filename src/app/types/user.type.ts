@@ -11,3 +11,11 @@ export enum ButtonText {
   Expend = 'Expend',
   Collapse = 'Collapse',
 }
+
+export type PaymentFormControls = {
+  name: FormControl<string | null>;
+  cardNumber: FormControl<string | null>;
+  // expiryDate: FormControl<Date | null>;
+  expiryDate: FormControl<string | null>;
+  cvv: FormControl<number | null>;
+};

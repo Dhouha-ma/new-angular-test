@@ -19,6 +19,11 @@
     <app-form-input formControlName="cvv" placeholder="CVV"></app-form-input>
   </div>
 
-  <app-button label="Pay Now" class="pay-now-btn" [disabled]="!paymentForm.valid"></app-button>
+  <app-button
+    label="Pay Now"
+    class="pay-now-btn"
+    [disabled]="!paymentForm.valid"
+    (click)="onPayNow()"
+  ></app-button>
   <p>Form valid: {{ paymentForm.valid }}</p>
 </form>

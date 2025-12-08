@@ -13,9 +13,7 @@ export class Card implements OnInit {
 
   public isExpanded = false;
 
-  ngOnInit(): void {
-    console.log('test');
-  }
+  ngOnInit(): void {}
 
   public toggle() {
     this.isExpanded = !this.isExpanded;

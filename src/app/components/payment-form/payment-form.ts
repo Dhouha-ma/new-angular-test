@@ -3,7 +3,8 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 
 import { FormInput } from '../shared/form-input/form-input';
 import { Button } from '../shared/button/button';
-import { PaymentFormControls } from '../../types/user.type';
+import { MockPaymentResponse, PaymentFormControls } from '../../types/user.type';
+import { Payment } from '../../services/payment';
 
 @Component({
   selector: 'app-payment-form',
@@ -12,9 +13,10 @@ import { PaymentFormControls } from '../../types/user.type';
   styleUrl: './payment-form.scss',
 })
 export class PaymentForm implements OnInit {
-  paymentForm!: FormGroup<PaymentFormControls>;
+  public paymentForm!: FormGroup<PaymentFormControls>;
+  private paymentResponse!: MockPaymentResponse;
 
-  constructor() {}
+  constructor(readonly paymentService: Payment) {}
 
   ngOnInit(): void {
     this.initiatePaymentForm();
@@ -25,6 +27,22 @@ export class PaymentForm implements OnInit {
     // });
 
     console.log('name', this.paymentForm.get('name')?.value);
+  }
+
+  public onPayNow() {
+    if (this.paymentForm.invalid) {
+      return;
+    }
+
+    this.paymentService.processPayment(this.paymentForm.getRawValue()).subscribe({
+      next: (paymentResponse: MockPaymentResponse) => {
+        this.paymentResponse = paymentResponse;
+        console.log('paymentResponse', this.paymentResponse);
+      },
+      error: () => {
+        console.log('error');
+      },
+    });
   }
 
   private initiatePaymentForm() {

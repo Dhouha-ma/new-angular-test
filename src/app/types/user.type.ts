@@ -19,3 +19,16 @@ export type PaymentFormControls = {
   expiryDate: FormControl<string | null>;
   cvv: FormControl<number | null>;
 };
+
+export type PaymentData = {
+  name: string | null;
+  cardNumber: string | null;
+  expiryDate: string | null;
+  cvv: number | null;
+};
+
+export type MockPaymentResponse = {
+  status: string;
+  transactionId: string;
+  message: string;
+};

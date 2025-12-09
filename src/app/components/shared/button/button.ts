@@ -1,8 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
+import { Highlight } from '../../../directives/highlight';
+
 @Component({
   selector: 'app-button',
-  imports: [],
+  imports: [Highlight],
   templateUrl: './button.html',
   styleUrl: './button.scss',
 })

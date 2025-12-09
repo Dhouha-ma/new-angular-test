@@ -40,7 +40,7 @@ export interface PaymentApiResponse {
   data?: PaymentData;
 }
 
-export interface User {
+export interface User<T> {
   name: string;
-  age: number;
+  age: T;
 }

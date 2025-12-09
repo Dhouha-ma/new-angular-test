@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Card } from '../shared/card/card';
 import { Button } from '../shared/button/button';
+import { User } from '../../types/user.type';
 
 @Component({
   selector: 'app-about',
@@ -10,7 +11,7 @@ import { Button } from '../shared/button/button';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class About {
-  public user = {
+  public user: User<number> = {
     name: 'Dhouha',
     age: 33,
   };

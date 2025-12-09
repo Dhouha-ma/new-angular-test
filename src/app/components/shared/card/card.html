@@ -2,9 +2,7 @@
   <div class="card-header">
     <h3>{{ title | capitalize }}</h3>
 
-    <button class="expand-button" (click)="toggle()">
-      {{ buttonText() }}
-    </button>
+    <app-button class="expand-button" (click)="toggle()" label="{{ buttonText() }}"> </app-button>
   </div>
 
   @if (isExpanded) {

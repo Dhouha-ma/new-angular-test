@@ -39,3 +39,8 @@ export interface PaymentApiResponse {
   message: string;
   data?: PaymentData;
 }
+
+export interface User {
+  name: string;
+  age: number;
+}

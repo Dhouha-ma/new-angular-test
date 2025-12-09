@@ -2,3 +2,12 @@
 <app-card title="card 1" class="card">
   <p>This is extra content that appears when expanded.</p>
 </app-card>
+
+<div class="user-wrapper">
+  <div class="user-card">
+    <h3>{{ user.name }}</h3>
+    <p>Age: {{ user.age }}</p>
+
+    <app-button (click)="updateAge()" label="Increase age"></app-button>
+  </div>
+</div>

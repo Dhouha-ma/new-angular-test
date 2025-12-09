@@ -28,7 +28,8 @@ export type PaymentData = {
 };
 
 export type MockPaymentResponse = {
-  status: string;
+  status: 'success' | 'failed';
   transactionId: string;
+  tokenUsed: string;
   message: string;
 };

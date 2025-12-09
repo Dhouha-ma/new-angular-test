@@ -30,9 +30,7 @@ export class PaymentForm implements OnInit {
   }
 
   public onPayNow() {
-    if (this.paymentForm.invalid) {
-      return;
-    }
+    if (this.paymentForm.invalid) return;
 
     this.paymentService.processPayment(this.paymentForm.getRawValue()).subscribe({
       next: (paymentResponse: MockPaymentResponse) => {

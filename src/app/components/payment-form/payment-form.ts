@@ -60,7 +60,7 @@ export class PaymentForm implements OnInit {
       .pipe(take(1))
       .subscribe({
         next: (payment: PaymentData[]) => {
-          console.log("payment", payment);
+          console.log('payment', payment);
         },
         error: (err) => {
           console.error('Error loading payment:', err);

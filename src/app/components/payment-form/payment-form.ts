@@ -3,8 +3,9 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 
 import { FormInput } from '../shared/form-input/form-input';
 import { Button } from '../shared/button/button';
-import { MockPaymentResponse, PaymentFormControls } from '../../types/user.type';
+import { MockPaymentResponse, PaymentData, PaymentFormControls } from '../../types/user.type';
 import { Payment } from '../../services/payment';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-payment-form',
@@ -51,5 +52,19 @@ export class PaymentForm implements OnInit {
       expiryDate: new FormControl('', [Validators.required]),
       cvv: new FormControl(null, Validators.required),
     });
+  }
+
+  private getPayment(): void {
+    this.paymentService
+      .getPaymentData()
+      .pipe(take(1))
+      .subscribe({
+        next: (payment: PaymentData[]) => {
+          console.log("payment", payment);
+        },
+        error: (err) => {
+          console.error('Error loading payment:', err);
+        },
+      });
   }
 }

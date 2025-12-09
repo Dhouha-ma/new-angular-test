@@ -33,3 +33,9 @@ export type MockPaymentResponse = {
   tokenUsed: string;
   message: string;
 };
+
+export interface PaymentApiResponse {
+  success: boolean;
+  message: string;
+  data?: PaymentData;
+}

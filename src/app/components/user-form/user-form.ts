@@ -18,6 +18,7 @@ export class UserForm implements OnInit {
 
   ngOnInit(): void {
     this.initiateUserForm();
+    // this.http.get('/api/test').subscribe(); for testing interceptor
   }
 
   public onButtonClick() {

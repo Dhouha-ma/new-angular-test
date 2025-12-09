@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+
+import { Subject, take, takeUntil } from 'rxjs';
 
 import { FormInput } from '../shared/form-input/form-input';
 import { Button } from '../shared/button/button';
 import { MockPaymentResponse, PaymentData, PaymentFormControls } from '../../types/user.type';
 import { Payment } from '../../services/payment';
-import { take } from 'rxjs';
 
 @Component({
   selector: 'app-payment-form',
@@ -13,9 +14,11 @@ import { take } from 'rxjs';
   templateUrl: './payment-form.html',
   styleUrl: './payment-form.scss',
 })
-export class PaymentForm implements OnInit {
+export class PaymentForm implements OnInit, OnDestroy {
   public paymentForm!: FormGroup<PaymentFormControls>;
+
   private paymentResponse!: MockPaymentResponse;
+  private destroy$ = new Subject<void>();
 
   constructor(readonly paymentService: Payment) {}
 
@@ -28,6 +31,8 @@ export class PaymentForm implements OnInit {
     // });
 
     console.log('name', this.paymentForm.get('name')?.value);
+
+    this.listenToFormChanges();
   }
 
   public onPayNow() {
@@ -66,5 +71,16 @@ export class PaymentForm implements OnInit {
           console.error('Error loading payment:', err);
         },
       });
+  }
+
+  private listenToFormChanges(): void {
+    this.paymentForm.valueChanges.pipe(takeUntil(this.destroy$)).subscribe((value) => {
+      console.log('Form changed:', value);
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 }

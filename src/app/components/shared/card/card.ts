@@ -1,10 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 import { ButtonText } from '../../../types/user.type';
+import { CapitalizePipe } from '../../../pipes/capitalize-pipe';
 
 @Component({
   selector: 'app-card',
-  imports: [],
+  imports: [CapitalizePipe],
   templateUrl: './card.html',
   styleUrl: './card.scss',
 })

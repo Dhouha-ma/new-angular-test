@@ -21,9 +21,15 @@ export class UserForm implements OnInit {
     // this.http.get('/api/test').subscribe(); for testing interceptor
   }
 
+  public isInputInvalid(inputControlName: string): boolean {
+    return (
+      this.userForm.get(inputControlName)!.invalid && this.userForm.get(inputControlName)!.touched
+    );
+  }
+
   public onButtonClick() {
     console.log('Button clicked!');
-    console.log(this.userForm);
+    console.log(this.userForm.getRawValue());
   }
 
   private initiateUserForm() {

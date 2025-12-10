@@ -23,6 +23,7 @@ export class FormInput implements ControlValueAccessor {
   value = '';
   disabled = false;
   @Input() placeholder = '';
+  @Input() isInvalid = false;
 
   onChange = (value: string) => {};
   onTouched = () => {};

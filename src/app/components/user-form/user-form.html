@@ -61,13 +61,13 @@
       </div>
     </div>
   </div>
-<div class="select-container">
-  <select formControlName="roleId" class="dropdown">
-    @for (role of roles; track role.id) {
-      <option [ngValue]="role.id">{{ role.title }}</option>
-    }
-  </select>
-</div>
+  <div class="select-container">
+    <select formControlName="roleId" class="dropdown">
+      @for (role of roles; track role.id) {
+        <option [ngValue]="role.id">{{ role.title }}</option>
+      }
+    </select>
+  </div>
 
   <app-button
     label="Submit"

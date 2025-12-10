@@ -38,7 +38,9 @@ export class PaymentForm implements OnInit, OnDestroy {
   public onPayNow() {
     if (this.paymentForm.invalid) return;
 
-    this.paymentService.processPayment(this.paymentForm.getRawValue()).subscribe({
+    const formValue = this.paymentForm.getRawValue();
+
+    this.paymentService.processPayment(formValue).subscribe({
       next: (paymentResponse: MockPaymentResponse) => {
         this.paymentResponse = paymentResponse;
         console.log('paymentResponse', this.paymentResponse);

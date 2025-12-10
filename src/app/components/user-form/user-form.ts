@@ -13,12 +13,18 @@ import { UserFormControls } from '../../types/user.type';
 })
 export class UserForm implements OnInit {
   public userForm!: FormGroup<UserFormControls>;
+  public roles = [
+    { id: 1, title: 'Developer' },
+    { id: 2, title: 'QA' },
+  ];
 
   constructor() {}
 
   ngOnInit(): void {
     this.initiateUserForm();
     // this.http.get('/api/test').subscribe(); for testing interceptor
+
+    this.handleRoleChange();
   }
 
   public isInputInvalid(inputControlName: string): boolean {
@@ -38,6 +44,13 @@ export class UserForm implements OnInit {
       lastName: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.required, Validators.email]),
       phone: new FormControl('', Validators.required),
+      roleId: new FormControl(1, Validators.required),
+    });
+  }
+
+  private handleRoleChange() {
+    this.userForm.get('roleId')?.valueChanges.subscribe((roleId) => {
+      console.log(roleId, 'role changed');
     });
   }
 }

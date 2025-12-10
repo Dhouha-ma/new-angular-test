@@ -5,6 +5,7 @@ export type UserFormControls = {
   lastName: FormControl<string | null>;
   email: FormControl<string | null>;
   phone: FormControl<string | null>;
+  roleId: FormControl<number | null>;
 };
 
 export enum ButtonText {

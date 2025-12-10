@@ -1,39 +1,73 @@
 <form [formGroup]="userForm" class="user-form">
   <div class="user-input">
     <label>First name</label>
-    <app-form-input
-      formControlName="firstName"
-      placeholder="First Name"
-      [isInvalid]="isInputInvalid('firstName')"
-    ></app-form-input>
+    <div>
+      <app-form-input
+        formControlName="firstName"
+        placeholder="First Name"
+        [isInvalid]="isInputInvalid('firstName')"
+      ></app-form-input>
+      <div class="error-container">
+        @if (isInputInvalid('firstName')) {
+          <p class="error-text">This field is required</p>
+        }
+      </div>
+    </div>
   </div>
-
   <div class="user-input">
     <label>Last name</label>
-    <app-form-input
-      formControlName="lastName"
-      placeholder="Last Name"
-      [isInvalid]="isInputInvalid('lastName')"
-    ></app-form-input>
+    <div>
+      <app-form-input
+        formControlName="lastName"
+        placeholder="Last Name"
+        [isInvalid]="isInputInvalid('lastName')"
+      ></app-form-input>
+      <div class="error-container">
+        @if (isInputInvalid('lastName')) {
+          <p class="error-text">This field is required</p>
+        }
+      </div>
+    </div>
   </div>
 
   <div class="user-input">
     <label>Email</label>
-    <app-form-input
-      formControlName="email"
-      placeholder="Email"
-      [isInvalid]="isInputInvalid('email')"
-    ></app-form-input>
+    <div>
+      <app-form-input
+        formControlName="email"
+        placeholder="Email"
+        [isInvalid]="isInputInvalid('email')"
+      ></app-form-input>
+      <div class="error-container">
+        @if (isInputInvalid('email')) {
+          <p class="error-text">This field is required</p>
+        }
+      </div>
+    </div>
   </div>
 
   <div class="user-input">
     <label>Phone</label>
-    <app-form-input
-      formControlName="phone"
-      placeholder="Phone"
-      [isInvalid]="isInputInvalid('phone')"
-    ></app-form-input>
+    <div>
+      <app-form-input
+        formControlName="phone"
+        placeholder="Phone"
+        [isInvalid]="isInputInvalid('phone')"
+      ></app-form-input>
+      <div class="error-container">
+        @if (isInputInvalid('phone')) {
+          <p class="error-text">This field is required</p>
+        }
+      </div>
+    </div>
   </div>
+<div class="select-container">
+  <select formControlName="roleId" class="dropdown">
+    @for (role of roles; track role.id) {
+      <option [ngValue]="role.id">{{ role.title }}</option>
+    }
+  </select>
+</div>
 
   <app-button
     label="Submit"
